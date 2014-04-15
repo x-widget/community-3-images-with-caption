@@ -39,10 +39,10 @@ $list = g::posts( array(
 							if ( empty($imgsrc['src']) )  $imgsrc['src'] = x::url()."/widget/".$widget_config['name'].'/img/no-image.png';
 														
 							$img = "<img src='$imgsrc[src]'/>";						
-							echo "<div class='img-wrapper'><a href='$li[href]'>".$img."</a></div>";
+							echo "<div class='img-wrapper'><a href='$li[url]'>".$img."</a></div>";
 						?>
 						</div>
-						<div class='caption'><a href='<?=$li['href']?>'><?=cut_str($li['wr_subject'],20,"...")?></a></div>
+						<div class='caption'><a href='<?=$li['url']?>'><?=cut_str($li['wr_subject'],20,"...")?></a></div>
 					</div>
 					<div style='clear: left'></div>
 				</div>		
