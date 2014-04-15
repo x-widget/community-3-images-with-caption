@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+	<category>
+		<main>post</main>
+		<sub>latest</sub>
+	</category>
+	<name>
+		<en>Images with caption</en>
+		<ko>Images with caption</ko>
+	</name>
+	<version>0.1</version>
+	<author>JaeHo Song</author>
+	<email>thruthesky@gmail.com</email>
+	<homepage>http://jaehosong.com</homepage>
+	<demo>http://philgo.net</demo>
+	<short>
+		<en>Displays latest post with images.</en>
+		<ko>Displays latest post with images.</ko>
+	</short>
+	<detail>
+		<en>Displays latest post with images.</en>
+		<ko>Displays latest post with images.</ko>
+	</detail>
+</config>
