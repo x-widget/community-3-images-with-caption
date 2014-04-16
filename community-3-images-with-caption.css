@@ -5,7 +5,7 @@
 .community_images_with_captions  .title{
 	border-bottom:1px solid #bbbbbb;
 	margin-bottom:10px;
-	padding-left: 26px;
+	padding-left: 8px;
 	height: 28px;
 	line-height: 28px;
 	font-weight:bold;
@@ -21,9 +21,10 @@
 }
 
 .community_images_with_captions  .title img{
-	position:absolute;
-	top:7px;
-	left:7px;
+	position:relative;
+	top:-2px;
+	left:-2px;
+	margin-right:2px;
 }
 
 .community_images_with_captions  .title .more-button {
