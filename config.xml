@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <config>
+	<id>widget community-3-images-with-caption</id>
 	<type>widget</type>
 	<category>
 		<main>post</main>
