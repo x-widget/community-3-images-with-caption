@@ -35,7 +35,7 @@ $list = g::posts( array(
 					<div class='images_with_captions'>
 						<div class='caption_image'>					
 						<?						
-							$imgsrc = get_list_thumbnail($bo_table, $li['wr_id'], 172, 87);							
+							$imgsrc = x::post_thumbnail($bo_table, $li['wr_id'], 172, 87);					
 							if ( empty($imgsrc['src']) )  $imgsrc['src'] = x::url()."/widget/".$widget_config['name'].'/img/no-image.png';
 														
 							$img = "<img src='$imgsrc[src]'/>";						
