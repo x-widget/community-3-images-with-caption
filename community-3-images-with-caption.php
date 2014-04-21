@@ -6,25 +6,28 @@ widget_css();
 if( $widget_config['title'] ) $title = $widget_config['title'];
 else $title = 'no title';
 
-if( $widget_config['forum1'] ) $bo_table = $widget_config['forum1'];
-else $bo_table = bo_table(1);
+if( $widget_config['forum1'] ) $_bo_table = $widget_config['forum1'];
+else $_bo_table = $widget_config['default_forum_id'];
 
 $limit = 4;
 
+
+
 $list = g::posts( array(
-			"bo_table" 	=>	$bo_table,
+			"bo_table" 	=>	$_bo_table,
 			"limit"		=>	$limit
 				)
 		);
+
 		
 ?>
 
 <div class='community_images_with_captions'>
 		<div class='title'>
 			<span class='com-subject'>
-			<img src='<?=x::url()?>/widget/<?=$widget_config['name']?>/img/icon.png'/> <a href='<?=G5_BBS_URL?>/board.php?bo_table=<?=$bo_table?>'><?=$title?></a>
+			<img src='<?=x::url()?>/widget/<?=$widget_config['name']?>/img/icon.png'/> <a href='<?=G5_BBS_URL?>/board.php?bo_table=<?=$_bo_table?>'><?=$title?></a>
 			</span>
-			<a class='more-button' href='<?=G5_BBS_URL?>/board.php?bo_table=<?=$bo_table?>'>자세히</a>
+			<a class='more-button' href='<?=G5_BBS_URL?>/board.php?bo_table=<?=$_bo_table?>'>자세히</a>
 			<div style='clear:both;'></div>
 		</div>
 <?php
@@ -35,7 +38,7 @@ $list = g::posts( array(
 					<div class='images_with_captions'>
 						<div class='caption_image'>					
 						<?						
-							$imgsrc = get_list_thumbnail($bo_table, $li['wr_id'], 172, 87);							
+							$imgsrc = get_list_thumbnail($_bo_table, $li['wr_id'], 172, 87);							
 							if ( empty($imgsrc['src']) )  $imgsrc['src'] = x::url()."/widget/".$widget_config['name'].'/img/no-image.png';
 														
 							$img = "<img src='$imgsrc[src]'/>";						
