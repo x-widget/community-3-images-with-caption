@@ -38,9 +38,12 @@ $list = g::posts( array(
 					<div class='images_with_captions'>
 						<div class='caption_image'>					
 						<?						
-							$imgsrc = x::post_thumbnail($_bo_table, $li['wr_id'], 172, 87);					
-							if ( empty($imgsrc['src']) )  $imgsrc['src'] = x::url()."/widget/".$widget_config['name'].'/img/no-image.png';
-														
+							$imgsrc = x::post_thumbnail($_bo_table, $li['wr_id'], 172, 87);	
+							if ( empty($imgsrc) ) {
+								$_wr_content = db::result("SELECT wr_content FROM $g5[write_prefix]$_bo_table WHERE wr_id='$li[wr_id]'");
+								$imgsrc['src'] = x::thumbnail_from_image_tag($_wr_content, $_bo_table, 172, 87);
+								if ( empty($imgsrc) ) $imgsrc['src'] = x::url()."/widget/".$widget_config['name'].'/img/no-image.png';
+							}				
 							$img = "<img src='$imgsrc[src]'/>";						
 							echo "<div class='img-wrapper'><a href='$li[url]'>".$img."</a></div>";
 						?>
